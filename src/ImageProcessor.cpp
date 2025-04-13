@@ -1,5 +1,21 @@
 #include "ImageProcessor.h"
+#include "Hasher.h"
 #include <iostream>
+
+ImageProcessor::ImageProcessor(Hashtable &ht, int threshold)
+{
+    fakeRealDistribution(ht, threshold);
+}
+
+const std::vector<std::pair<std::string, std::string>> &ImageProcessor::getRealImages() const
+{
+    return realImages;
+}
+
+const std::vector<std::pair<std::string, std::string>> &ImageProcessor::getFakeImages() const
+{
+    return fakeImages;
+}
 
 cv::Mat ImageProcessor::loadImage(const std::string &imagePath)
 {
@@ -21,4 +37,29 @@ cv::Mat ImageProcessor::convertToGrayscale(const cv::Mat &image)
     return gray;
 }
 
-//define real_Fake_distr
+void ImageProcessor::fakeRealDistribution(Hashtable &ht, int threshold)
+{
+    // Implementation of separating real and fake images based on threshold
+    fakeImages = ht.getPairsBelowThreshold(threshold);
+    realImages = ht.getPairsAboveThreshold(threshold);
+}
+
+void ImageProcessor::processBatch(const std::vector<std::pair<std::string, std::string>> &imagePairs, Hashtable &ht)
+{
+    for (const auto &pair : imagePairs)
+    {
+        // Load and process images
+        cv::Mat originalImg = convertToGrayscale(loadImage(pair.first));
+        cv::Mat suspectImg = convertToGrayscale(loadImage(pair.second));
+
+        // Compute hashes
+        std::string originalHash = Hasher::computeDHash(originalImg);
+        std::string suspectHash = Hasher::computeDHash(suspectImg);
+
+        // Calculate hamming distance
+        int distance = Hasher::hammingDistance(originalHash, suspectHash);
+
+        // Insert into hashtable
+        ht.insert(distance, pair.first, pair.second);
+    }
+}

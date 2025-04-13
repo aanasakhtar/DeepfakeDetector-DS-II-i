@@ -1,47 +1,45 @@
+    
+    
 #include <iostream>
+#include <vector>
+#include <utility>
+#include <string>
 #include "ImageProcessor.h"
 #include "Hasher.h"
+#include "Hashtable.h"
 
-
-
-int hammingDistance(const std::string &hash1, const std::string &hash2)
-{
-    int count = 0;
-    int len = std::min(hash1.length(), hash2.length());
-    for (int i = 0; i < len; ++i)
-    {
-        if (hash1[i] != hash2[i])
-        {
-            count++;
-        }
-    }
-    return count;
-}
 int main()
 {
-    // hashtable intialization
-    std::string originalPath = "original.jpg"; // We will change these
-    std::string suspectPath = "suspect.jpg";
+    // Create hashtable
+    Hashtable imagePairsTable;
 
-    ImageProcessor IM(originPath,suspectPath);
-    
-    for(int i = 0; i < 1000; i++) {
-        // loading our inputs 
-        cv::Mat suspect = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(suspectPath));
-        cv::Mat original = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(originalPath));
+    // Example paths (you would replace these with actual image paths)
+    std::vector<std::pair<std::string, std::string>> imagePairs;
 
-        std::string hash1 = Hasher::computeDHash(original);
-        std::string hash2 = Hasher::computeDHash(suspect);
-
-        int distance = hammingDistance(hash1, hash2);
-        
-        // put hamming value and images pair in hashtable 
+    // In a real application, you would load these pairs from a directory or list
+    for (int i = 1; i <= 1000; i++)
+    {
+        std::string originalPath = "dataset/original/img" + std::to_string(i) + ".jpg";
+        std::string suspectPath = "dataset/suspect/img" + std::to_string(i) + ".jpg";
+        imagePairs.push_back(std::make_pair(originalPath, suspectPath));
     }
 
+    // Process batch of images and insert into hashtable
+    ImageProcessor::processBatch(imagePairs, imagePairsTable);
 
+    // Set threshold for determining real vs fake
+    int threshold = 10; // This we can change
 
-    
-   
+    // Create processor that will categorize images
+    ImageProcessor processor(imagePairsTable, threshold);
+
+    // Get results
+    const auto &realImages = processor.getRealImages();
+    const auto &fakeImages = processor.getFakeImages();
+
+    // Print results
+    std::cout << "Found " << realImages.size() << " real images" << std::endl;
+    std::cout << "Found " << fakeImages.size() << " fake images" << std::endl;
 
     return 0;
 }
