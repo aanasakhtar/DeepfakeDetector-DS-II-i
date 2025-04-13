@@ -6,6 +6,7 @@
 class HashComparator
 {
 public:
+    
     static int hammingDistance(const std::string &hash1, const std::string &hash2);
     static bool isDeepfake(int distance, int threshold);
 };

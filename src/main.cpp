@@ -1,30 +1,47 @@
 #include <iostream>
 #include "ImageProcessor.h"
 #include "Hasher.h"
-#include "HashComparator.h"
 
+
+
+int hammingDistance(const std::string &hash1, const std::string &hash2)
+{
+    int count = 0;
+    int len = std::min(hash1.length(), hash2.length());
+    for (int i = 0; i < len; ++i)
+    {
+        if (hash1[i] != hash2[i])
+        {
+            count++;
+        }
+    }
+    return count;
+}
 int main()
 {
+    // hashtable intialization
     std::string originalPath = "original.jpg"; // We will change these
     std::string suspectPath = "suspect.jpg";
 
-    cv::Mat original = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(originalPath));
-    cv::Mat suspect = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(suspectPath));
+    ImageProcessor IM(originPath,suspectPath);
+    
+    for(int i = 0; i < 1000; i++) {
+        // loading our inputs 
+        cv::Mat suspect = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(suspectPath));
+        cv::Mat original = ImageProcessor::convertToGrayscale(ImageProcessor::loadImage(originalPath));
 
-    std::string hash1 = Hasher::computeDHash(original);
-    std::string hash2 = Hasher::computeDHash(suspect);
+        std::string hash1 = Hasher::computeDHash(original);
+        std::string hash2 = Hasher::computeDHash(suspect);
 
-    int distance = HashComparator::hammingDistance(hash1, hash2);
-
-    std::cout << "Hamming Distance: " << distance << std::endl;
-    if (HashComparator::isDeepfake(distance, 10))
-    {
-        std::cout << "Warning: Possible Deepfake Detected!" << std::endl;
+        int distance = hammingDistance(hash1, hash2);
+        
+        // put hamming value and images pair in hashtable 
     }
-    else
-    {
-        std::cout << "Image Appears Legitimate." << std::endl;
-    }
+
+
+
+    
+   
 
     return 0;
 }

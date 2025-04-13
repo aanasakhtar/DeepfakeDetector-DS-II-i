@@ -20,3 +20,5 @@ cv::Mat ImageProcessor::convertToGrayscale(const cv::Mat &image)
     }
     return gray;
 }
+
+//define real_Fake_distr
