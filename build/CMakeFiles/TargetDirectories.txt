@@ -1,0 +1,3 @@
+C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/build/CMakeFiles/DeepfakeDetector-DS-II-i.dir
+C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/build/CMakeFiles/edit_cache.dir
+C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/build/CMakeFiles/rebuild_cache.dir

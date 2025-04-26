@@ -1,45 +1,33 @@
-#include "Hashtable.h"
+#include "Hasher.h"
+#include <bitset>
+#include <iostream>
 
-void Hashtable::insert(int hammingDistance, const std::string &originalPath, const std::string &suspectPath)
+std::string Hasher::computeDHash(const cv::Mat &image)
 {
-    data[hammingDistance].push_back(std::make_pair(originalPath, suspectPath));
-}
+    cv::Mat resized;
+    cv::resize(image, resized, cv::Size(9, 8)); // 9x8 for dHash
 
-std::vector<std::pair<std::string, std::string>> Hashtable::getImagePairs(int hammingDistance)
-{
-    if (data.find(hammingDistance) != data.end())
+    std::string hash = "";
+    for (int row = 0; row < resized.rows; ++row)
     {
-        return data[hammingDistance];
-    }
-    return std::vector<std::pair<std::string, std::string>>();
-}
-
-std::vector<std::pair<std::string, std::string>> Hashtable::getPairsAboveThreshold(int threshold)
-{
-    std::vector<std::pair<std::string, std::string>> result;
-
-    for (const auto &entry : data)
-    {
-        if (entry.first >= threshold)
+        for (int col = 0; col < resized.cols - 1; ++col)
         {
-            result.insert(result.end(), entry.second.begin(), entry.second.end());
+            hash += (resized.at<uchar>(row, col) > resized.at<uchar>(row, col + 1)) ? '1' : '0';
         }
     }
-
-    return result;
+    return hash;
 }
 
-std::vector<std::pair<std::string, std::string>> Hashtable::getPairsBelowThreshold(int threshold)
+int Hasher::hammingDistance(const std::string &hash1, const std::string &hash2)
 {
-    std::vector<std::pair<std::string, std::string>> result;
-
-    for (const auto &entry : data)
+    int count = 0;
+    int len = std::min(hash1.length(), hash2.length());
+    for (int i = 0; i < len; ++i)
     {
-        if (entry.first < threshold)
+        if (hash1[i] != hash2[i])
         {
-            result.insert(result.end(), entry.second.begin(), entry.second.end());
+            count++;
         }
     }
-
-    return result;
+    return count;
 }
