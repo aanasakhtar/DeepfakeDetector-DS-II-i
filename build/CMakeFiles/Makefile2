@@ -84,12 +84,12 @@ clean: CMakeFiles/DeepfakeDetector-DS-II-i.dir/clean
 CMakeFiles/DeepfakeDetector-DS-II-i.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=1,2 "Built target DeepfakeDetector-DS-II-i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target DeepfakeDetector-DS-II-i"
 .PHONY : CMakeFiles/DeepfakeDetector-DS-II-i.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DeepfakeDetector-DS-II-i.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/DeepfakeDetector-DS-II-i.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles 0
 .PHONY : CMakeFiles/DeepfakeDetector-DS-II-i.dir/rule
@@ -101,7 +101,7 @@ DeepfakeDetector-DS-II-i: CMakeFiles/DeepfakeDetector-DS-II-i.dir/rule
 # codegen rule for target.
 CMakeFiles/DeepfakeDetector-DS-II-i.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=1,2 "Finished codegen for target DeepfakeDetector-DS-II-i"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target DeepfakeDetector-DS-II-i"
 .PHONY : CMakeFiles/DeepfakeDetector-DS-II-i.dir/codegen
 
 # clean rule for target.

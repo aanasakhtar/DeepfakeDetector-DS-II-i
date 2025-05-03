@@ -1,4 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj.d"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj.d"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj.d"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj"
+  "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj.d"
   "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj"
   "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj.d"
   "DeepfakeDetector-DS-II-i.exe"

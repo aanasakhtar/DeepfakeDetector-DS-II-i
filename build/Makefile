@@ -128,6 +128,102 @@ DeepfakeDetector-DS-II-i/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/build
 .PHONY : DeepfakeDetector-DS-II-i/fast
 
+src/detector.obj: src/detector.cpp.obj
+.PHONY : src/detector.obj
+
+# target to build an object file
+src/detector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj
+.PHONY : src/detector.cpp.obj
+
+src/detector.i: src/detector.cpp.i
+.PHONY : src/detector.i
+
+# target to preprocess a source file
+src/detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.i
+.PHONY : src/detector.cpp.i
+
+src/detector.s: src/detector.cpp.s
+.PHONY : src/detector.s
+
+# target to generate assembly for a file
+src/detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.s
+.PHONY : src/detector.cpp.s
+
+src/hash_database.obj: src/hash_database.cpp.obj
+.PHONY : src/hash_database.obj
+
+# target to build an object file
+src/hash_database.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj
+.PHONY : src/hash_database.cpp.obj
+
+src/hash_database.i: src/hash_database.cpp.i
+.PHONY : src/hash_database.i
+
+# target to preprocess a source file
+src/hash_database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.i
+.PHONY : src/hash_database.cpp.i
+
+src/hash_database.s: src/hash_database.cpp.s
+.PHONY : src/hash_database.s
+
+# target to generate assembly for a file
+src/hash_database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.s
+.PHONY : src/hash_database.cpp.s
+
+src/hash_generator.obj: src/hash_generator.cpp.obj
+.PHONY : src/hash_generator.obj
+
+# target to build an object file
+src/hash_generator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj
+.PHONY : src/hash_generator.cpp.obj
+
+src/hash_generator.i: src/hash_generator.cpp.i
+.PHONY : src/hash_generator.i
+
+# target to preprocess a source file
+src/hash_generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.i
+.PHONY : src/hash_generator.cpp.i
+
+src/hash_generator.s: src/hash_generator.cpp.s
+.PHONY : src/hash_generator.s
+
+# target to generate assembly for a file
+src/hash_generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.s
+.PHONY : src/hash_generator.cpp.s
+
+src/image_processor.obj: src/image_processor.cpp.obj
+.PHONY : src/image_processor.obj
+
+# target to build an object file
+src/image_processor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj
+.PHONY : src/image_processor.cpp.obj
+
+src/image_processor.i: src/image_processor.cpp.i
+.PHONY : src/image_processor.i
+
+# target to preprocess a source file
+src/image_processor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.i
+.PHONY : src/image_processor.cpp.i
+
+src/image_processor.s: src/image_processor.cpp.s
+.PHONY : src/image_processor.s
+
+# target to generate assembly for a file
+src/image_processor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DeepfakeDetector-DS-II-i.dir\build.make CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.s
+.PHONY : src/image_processor.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -161,6 +257,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... DeepfakeDetector-DS-II-i
+	@echo ... src/detector.obj
+	@echo ... src/detector.i
+	@echo ... src/detector.s
+	@echo ... src/hash_database.obj
+	@echo ... src/hash_database.i
+	@echo ... src/hash_database.s
+	@echo ... src/hash_generator.obj
+	@echo ... src/hash_generator.i
+	@echo ... src/hash_generator.s
+	@echo ... src/image_processor.obj
+	@echo ... src/image_processor.i
+	@echo ... src/image_processor.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -8,6 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/detector.cpp" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj" "gcc" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj.d"
+  "C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/hash_database.cpp" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj" "gcc" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj.d"
+  "C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/hash_generator.cpp" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj" "gcc" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj.d"
+  "C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/image_processor.cpp" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj" "gcc" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj.d"
   "C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/main.cpp" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj" "gcc" "CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj.d"
   )
 

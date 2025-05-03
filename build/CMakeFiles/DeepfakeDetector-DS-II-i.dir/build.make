@@ -86,14 +86,82 @@ CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.s"
 	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\main.cpp -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\main.cpp.s
 
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/flags.make
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/includes_CXX.rsp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj: C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/hash_generator.cpp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj -MF CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_generator.cpp.obj.d -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_generator.cpp.obj -c C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_generator.cpp
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.i"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_generator.cpp > CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_generator.cpp.i
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.s"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_generator.cpp -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_generator.cpp.s
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/flags.make
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/includes_CXX.rsp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj: C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/hash_database.cpp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj -MF CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_database.cpp.obj.d -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_database.cpp.obj -c C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_database.cpp
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.i"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_database.cpp > CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_database.cpp.i
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.s"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\hash_database.cpp -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\hash_database.cpp.s
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/flags.make
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/includes_CXX.rsp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj: C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/image_processor.cpp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj -MF CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\image_processor.cpp.obj.d -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\image_processor.cpp.obj -c C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\image_processor.cpp
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.i"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\image_processor.cpp > CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\image_processor.cpp.i
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.s"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\image_processor.cpp -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\image_processor.cpp.s
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/flags.make
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/includes_CXX.rsp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj: C:/Users/Admin/Desktop/spring25/DS-II/project/DeepfakeDetector-DS-II-i/src/detector.cpp
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj: CMakeFiles/DeepfakeDetector-DS-II-i.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj -MF CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\detector.cpp.obj.d -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\detector.cpp.obj -c C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\detector.cpp
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.i"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\detector.cpp > CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\detector.cpp.i
+
+CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.s"
+	C:\PROGRA~1\mingw64\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\src\detector.cpp -o CMakeFiles\DeepfakeDetector-DS-II-i.dir\src\detector.cpp.s
+
 # Object files for target DeepfakeDetector-DS-II-i
 DeepfakeDetector__DS__II__i_OBJECTS = \
-"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj"
+"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj" \
+"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj" \
+"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj" \
+"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj" \
+"CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj"
 
 # External object files for target DeepfakeDetector-DS-II-i
 DeepfakeDetector__DS__II__i_EXTERNAL_OBJECTS =
 
 DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/main.cpp.obj
+DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_generator.cpp.obj
+DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/hash_database.cpp.obj
+DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/image_processor.cpp.obj
+DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/src/detector.cpp.obj
 DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/build.make
 DeepfakeDetector-DS-II-i.exe: C:/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/libopencv_gapi455.dll.a
 DeepfakeDetector-DS-II-i.exe: C:/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/libopencv_highgui455.dll.a
@@ -113,7 +181,7 @@ DeepfakeDetector-DS-II-i.exe: C:/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/l
 DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/linkLibs.rsp
 DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/objects1.rsp
 DeepfakeDetector-DS-II-i.exe: CMakeFiles/DeepfakeDetector-DS-II-i.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable DeepfakeDetector-DS-II-i.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Admin\Desktop\spring25\DS-II\project\DeepfakeDetector-DS-II-i\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable DeepfakeDetector-DS-II-i.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\DeepfakeDetector-DS-II-i.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
