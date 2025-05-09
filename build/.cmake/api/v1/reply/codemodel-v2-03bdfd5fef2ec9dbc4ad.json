@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "DeepfakeDetector-DS-II-i",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DeepfakeDetector-DS-II-i::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DeepfakeDetector-DS-II-i-2265bfa956da1f4de39d.json",
+					"name" : "DeepfakeDetector-DS-II-i",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/User/Desktop/UNI/SEMESTER 4/DS-II/DeepfakeDetector-DS-II-i/build",
+		"source" : "C:/Users/User/Desktop/UNI/SEMESTER 4/DS-II/DeepfakeDetector-DS-II-i"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
