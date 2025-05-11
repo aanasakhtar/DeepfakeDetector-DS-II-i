@@ -1,27 +1,16 @@
 #pragma once
-
 #include <opencv2/opencv.hpp>
-#include <string>
 #include <vector>
+#include <string>
 
 class HashGenerator
 {
 public:
-    // Default constructor
-    HashGenerator(int hashSize = 64);
-
-    // Generate a perceptual hash (pHash) from an image
-    std::vector<bool> generatePHash(const cv::Mat &image);
-
-    // Convert a hash to string representation for easy storage/comparison
-    std::string hashToString(const std::vector<bool> &hash);
-
-    // Convert a string representation back to a hash
-    std::vector<bool> stringToHash(const std::string &hashStr);
-
+    HashGenerator(int featureSize = 16);
+    std::vector<float> generateDCTFeatures(const cv::Mat &image); // Correct method
+    std::string hashToString(const std::vector<float> &features);
+    std::vector<float> stringToHash(const std::string &hashStr);
 private:
-    int hashSize; // Size of the hash (e.g., 64 bits = 8x8)
-
-    // Helper methods
+    int featureSize;
     cv::Mat preprocessForHash(const cv::Mat &image, int size);
 };

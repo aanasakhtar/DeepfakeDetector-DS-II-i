@@ -1,15 +1,11 @@
 #include "detector.hpp"
-#include <chrono>
+#include <cmath>
 #include <random>
-#include <sstream>
-#include <iomanip>
 
 Detector::Detector(int hashSize, int hammingThreshold)
     : hashSize(hashSize), hammingThreshold(hammingThreshold)
 {
-
-    // Initialize components
-    hashGenerator = std::make_shared<HashGenerator>(hashSize);
+    hashGenerator = std::make_shared<HashGenerator>(16);
     imageProcessor = std::make_shared<ImageProcessor>();
     hashDatabase = std::make_shared<HashDatabase>(hashGenerator, hammingThreshold);
 }
@@ -25,24 +21,14 @@ bool Detector::initialize(const std::string &databaseFile)
 
 bool Detector::addOriginalImage(const std::string &filepath, const std::string &imageId)
 {
-    // Load and validate image
     cv::Mat image = imageProcessor->loadImage(filepath);
-    if (!imageProcessor->isValidImage(image))
-    {
-        return false;
-    }
+    if (!imageProcessor->isValidImage(image)) return false;
 
-    // Process image for better hash generation
     cv::Mat processed = imageProcessor->preprocess(image);
+    std::vector<float> features = hashGenerator->generateDCTFeatures(processed);
 
-    // Generate hash
-    std::vector<bool> hash = hashGenerator->generatePHash(processed);
-
-    // Create ID if not provided
     std::string id = imageId.empty() ? generateImageId() : imageId;
-
-    // Add to database
-    return hashDatabase->addHash(id, hash, filepath, true);
+    return hashDatabase->addHash(id, features, filepath, true);
 }
 
 DetectionDetails Detector::checkImage(const std::string &filepath)
@@ -56,48 +42,41 @@ DetectionDetails Detector::checkImage(const cv::Mat &image, const std::string &i
     DetectionDetails details;
     details.result = DetectionResult::INVALID_IMAGE;
 
-    // Validate image
-    if (!imageProcessor->isValidImage(image))
-    {
-        return details;
-    }
+    if (!imageProcessor->isValidImage(image)) return details;
 
-    // Process image
     cv::Mat processed = imageProcessor->preprocess(image);
+    std::vector<float> features = hashGenerator->generateDCTFeatures(processed);
 
-    // Generate hash
-    std::vector<bool> hash = hashGenerator->generatePHash(processed);
-
-    // Check for exact match
-    if (hashDatabase->containsHash(hash))
+    if (hashDatabase->containsHash(features))
     {
         details.result = DetectionResult::EXACT_DUPLICATE;
     }
     else
     {
-        // Look for similar hashes
-        std::vector<ImageRecord> similarImages = hashDatabase->findSimilarHashes(hash);
+        std::vector<ImageRecord> similarImages = hashDatabase->findSimilarHashes(features);
 
         if (!similarImages.empty())
         {
             details.result = DetectionResult::SIMILAR;
             details.matches = similarImages;
 
-            // Find best match (closest hash)
-            int minDistance = hammingThreshold + 1;
+            double minDistance = 2.0; // Max cosine distance
             for (const auto &match : similarImages)
             {
-                std::vector<bool> matchHash = hashGenerator->stringToHash(match.hashString);
-                int distance = HammingDistance::calculate(hash, matchHash);
+                double similarity = SimilarityMetrics::calculateCosine(features, match.features);
+                double distance = 1.0 - similarity;
 
                 if (distance < minDistance)
                 {
                     minDistance = distance;
                     details.bestMatchId = match.imageId;
+                    details.bestMatchDistance = minDistance;
                 }
             }
-
-            details.bestMatchDistance = minDistance;
+            // Adjust threshold for cosine distance
+            double dynamicThreshold = hammingThreshold / 100.0;
+            if (image.size().area() > 50000) dynamicThreshold *= 1.2; // Slightly relax for larger images
+            if (minDistance > dynamicThreshold) details.result = DetectionResult::ORIGINAL;
         }
         else
         {
@@ -120,19 +99,12 @@ size_t Detector::getDatabaseSize() const
 
 std::string Detector::generateImageId() const
 {
-    // Generate a unique ID based on timestamp and random number
     auto now = std::chrono::system_clock::now();
-    auto duration = now.time_since_epoch();
-    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
-
-    // Add some randomness
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(0, 9999);
-    int random = dis(gen);
-
-    // Format ID
     std::stringstream ss;
-    ss << "img_" << millis << "_" << std::setw(4) << std::setfill('0') << random;
+    ss << "img_" << millis << "_" << std::setw(4) << std::setfill('0') << dis(gen);
     return ss.str();
 }

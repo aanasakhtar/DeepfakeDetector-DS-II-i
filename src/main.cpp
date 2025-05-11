@@ -15,6 +15,7 @@ void printUsage(const char *programName)
     std::cout << "  --add <image>       Add a single image to the database" << std::endl;
     std::cout << "  --database <file>   Specify database file (default: phash_db.dat)" << std::endl;
     std::cout << "  --threshold <num>   Set Hamming distance threshold (default: 5)" << std::endl;
+    std::cout << "  --save              Save database after operations" << std::endl;
     std::cout << "  --help              Show this help message" << std::endl;
 }
 
@@ -28,7 +29,6 @@ void initializeDatabase(Detector &detector, const std::string &folderPath)
         if (entry.is_regular_file())
         {
             std::string extension = entry.path().extension().string();
-            // Convert to lowercase
             std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
 
             if (extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".bmp")
@@ -65,10 +65,19 @@ void checkImage(Detector &detector, const std::string &imagePath)
     {
         std::cout << "Result: SIMILAR IMAGE DETECTED!" << std::endl;
         std::cout << "Number of similar matches: " << details.matches.size() << std::endl;
+        std::string bestMatchPath = "Unknown";
+        for (const auto &match : details.matches)
+        {
+            if (match.imageId == details.bestMatchId)
+            {
+                bestMatchPath = match.sourcePath;
+                break;
+            }
+        }
         std::cout << "Best match (ID: " << details.bestMatchId
-                  << ", Distance: " << details.bestMatchDistance << ")" << std::endl;
+                  << ", Distance: " << details.bestMatchDistance
+                  << ", Path: " << bestMatchPath << ")" << std::endl;
 
-        // Print up to 5 matches
         std::cout << "Similar images:" << std::endl;
         int count = 0;
         for (const auto &match : details.matches)
@@ -98,9 +107,9 @@ int main(int argc, char *argv[])
     }
 
     std::string databaseFile = "phash_db.dat";
-    int threshold = 5;
+    int threshold = 3;
+    bool saveDatabase = false;
 
-    // Parse command line arguments
     for (int i = 1; i < argc; i++)
     {
         std::string arg = argv[i];
@@ -118,10 +127,13 @@ int main(int argc, char *argv[])
         {
             threshold = std::stoi(argv[++i]);
         }
+        else if (arg == "--save")
+        {
+            saveDatabase = true;
+        }
     }
 
-    // Initialize detector
-    Detector detector(64, threshold);
+    Detector detector(16, threshold); // Changed from 64 to match HashGenerator
     bool initialized = detector.initialize(databaseFile);
 
     if (!initialized)
@@ -133,7 +145,6 @@ int main(int argc, char *argv[])
         std::cout << "Loaded database with " << detector.getDatabaseSize() << " images" << std::endl;
     }
 
-    // Process commands
     for (int i = 1; i < argc; i++)
     {
         std::string arg = argv[i];
@@ -141,6 +152,7 @@ int main(int argc, char *argv[])
         if (arg == "--init" && i + 1 < argc)
         {
             initializeDatabase(detector, argv[++i]);
+            saveDatabase = true;
         }
         else if (arg == "--check" && i + 1 < argc)
         {
@@ -152,28 +164,27 @@ int main(int argc, char *argv[])
             if (detector.addOriginalImage(imagePath))
             {
                 std::cout << "Added image to database: " << imagePath << std::endl;
+                saveDatabase = true;
             }
             else
             {
                 std::cout << "Failed to add image: " << imagePath << std::endl;
             }
         }
-        else if (arg == "--database" || arg == "--threshold")
+        else if (arg == "--database" || arg == "--threshold" || arg == "--save")
         {
-            // Skip these as they were already processed
             i++;
         }
     }
 
-    // Save database
-    if (detector.saveDatabase(databaseFile))
-    {
-        std::cout << "Database saved to: " << databaseFile << std::endl;
-    }
-    else
+    if (saveDatabase && !detector.saveDatabase(databaseFile))
     {
         std::cout << "Error: Failed to save database" << std::endl;
         return 1;
+    }
+    else if (saveDatabase)
+    {
+        std::cout << "Database saved to: " << databaseFile << std::endl;
     }
 
     return 0;
